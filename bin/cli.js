@@ -17,8 +17,6 @@ app.listen(PORT, () => {
 
   GET /profile/:userId
   GET /game/:userId/:slug/:platform
-  GET /search?q=username
-  GET /lookup?username=name
 
   Slugs:     requiem, four, village, three, two, seven, rev2, one, rev, six, uc, resistance
   Platforms: ps5, ps4, ps3, steam, xseries, xone, x360, nsw, nsw2, epic

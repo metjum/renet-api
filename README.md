@@ -31,15 +31,11 @@ The server starts at `http://localhost:3000` by default.
 ### As a library (Node.js)
 
 ```js
-import { getProfile, getGameDetail, searchUsers } from "renet-api";
+import { getProfile, getGameDetail } from "renet-api";
 
 // Get a player profile by user ID
 const profile = await getProfile("1944925");
 console.log(profile.username); // "metju"
-
-// Search for players by username
-const results = await searchUsers("metju");
-console.log(results); // [{ username: "metju", userId: "1944925" }]
 
 // Get detailed game data
 const game = await getGameDetail("2604056", "requiem", "ps5");
@@ -171,33 +167,6 @@ The `userId` here is the numeric ID found in game URLs like `.../o2604056.html` 
 | `nsw` | Nintendo Switch |
 | `nsw2` | Nintendo Switch 2 |
 | `epic` | Epic Games |
-
----
-
-### `GET /search?q=:username`
-
-Searches RE.NET for players matching the given username.
-
-**Example:** `GET /search?q=metju`
-
-```json
-{
-  "ok": true,
-  "results": [
-    { "username": "metju", "userId": "1944925" }
-  ]
-}
-```
-
----
-
-### `GET /lookup?username=:username`
-
-Convenience endpoint — searches for the username and immediately returns the full profile of the first result.
-
-**Example:** `GET /lookup?username=metju`
-
-Returns the same response as `/profile/:userId`.
 
 ---
 
